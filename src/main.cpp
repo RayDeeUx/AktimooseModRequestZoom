@@ -12,6 +12,8 @@ float maximumZoom = 1000.0f;
 	minimumZoom = static_cast<float>(Mod::get()->getSettingValue<double>("minimumZoom"));\
 	maximumZoom = static_cast<float>(Mod::get()->getSettingValue<double>("maximumZoom"));
 
+// function recreation by @hiimjasmine00
+// customization, hook prio by @raydeeux
 class $modify(MyGJBaseGameLayer, GJBaseGameLayer) {
 	static void onModify(auto& self) {
 		(void) self.setHookPriority("GJBaseGameLayer::updateZoom", Priority::Stub);
