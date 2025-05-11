@@ -37,15 +37,14 @@ class $modify(MyGJBaseGameLayer, GJBaseGameLayer) {
 class $modify(MySetupTriggerPopup, SetupTriggerPopup) {
 	bool init(EffectGameObject* trigger, cocos2d::CCArray* triggers, float width, float height, int background) {
 		if (!SetupTriggerPopup::init(trigger, triggers, width, height, background)) return false;
-		if (!typeinfo_cast<SetupZoomTriggerPopup*>(this)) return true;
-
-		if (!m_mainLayer || !m_mainLayer->getChildByType<CCMenu>(0)) return true;
+		if (!m_mainLayer || !m_mainLayer->getChildByType<CCMenu>(0) || !typeinfo_cast<SetupZoomTriggerPopup*>(this)) return true;
 
 		CircleButtonSprite* buttonSprite = CircleButtonSprite::create(CCSprite::createWithSpriteFrameName("edit_eZoomBtn_001.png"), CircleBaseColor::DarkPurple);
 		buttonSprite->setScale(.6f);
 		CCMenuItemSpriteExtra* settings = CCMenuItemSpriteExtra::create(buttonSprite, this, menu_selector(MySetupTriggerPopup::onModSettingsFromAkti));
 		settings->setPosition({-162.f, 150.f});
 		m_mainLayer->getChildByType<CCMenu>(0)->addChild(settings);
+
 		return true;
 	}
 	void onModSettingsFromAkti(CCObject* sender) {
