@@ -1,0 +1,52 @@
+{
+	"geode": "4.4.0",
+	"gd": {
+		"win": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074",
+		"android": "2.2074"
+	},
+	"id": "raydeeux_hiimjasmine00.aktimoosemodrequestzoom",
+	"name": "AktimooseModRequestZoom",
+	"version": "v1.0.0",
+	"developers": ["RayDeeUx", "hiimjasmine00"],
+	"description": "Akitmoose mod request: bypass camera zoom limits.",
+	"settings": {
+		"enabled": {
+			"name": "Enabled",
+			"description": "Toggles the mod.",
+			"type": "bool",
+			"default": true
+		},
+		"minimumZoom": {
+			"name": "Minimum Zoom Value",
+			"type": "float",
+			"default": 0.0001,
+			"min": 0.0001,
+			"max": 0.4000,
+			"control": {
+				"slider": true,
+				"input": true,
+				"arrows": true,
+				"big-arrows": true,
+				"arrow-step": 0.01,
+				"big-arrow-step": 0.1
+			}
+		},
+		"maximumZoom": {
+			"name": "Maximum Zoom Value",
+			"type": "float",
+			"default": 1000.0,
+			"min": 3.0000,
+			"max": 1000.0,
+			"control": {
+				"slider": true,
+				"input": true,
+				"arrows": true,
+				"big-arrows": true,
+				"arrow-step": 0.01,
+				"big-arrow-step": 0.1
+			}
+		}
+	}
+}
