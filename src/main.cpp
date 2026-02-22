@@ -22,7 +22,7 @@ class $modify(MyGJBaseGameLayer, GJBaseGameLayer) {
 	}
 	void updateZoom(float zoom, float duration, int easing, float rate, int uniqueID, int controlID) {
 		if (!enabled) return GJBaseGameLayer::updateZoom(zoom, duration, easing, rate, uniqueID, controlID);
-		const float targetZoom = std::clamp(zoom > -0.01f ? zoom : minimumZoom, minimumZoom, maximumZoom);
+		const float targetZoom = std::clamp<float>(zoom > -0.01f ? zoom : minimumZoom, minimumZoom, maximumZoom);
 		m_gameState.m_targetCameraZoom = targetZoom;
 		if (duration > 0.0f) m_gameState.tweenValue(m_gameState.m_cameraZoom, targetZoom, 14, duration, easing, rate, uniqueID, controlID);
 		else {
