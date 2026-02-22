@@ -29,8 +29,9 @@ class $modify(MyGJBaseGameLayer, GJBaseGameLayer) {
 			m_gameState.stopTweenAction(14);
 			m_gameState.m_cameraZoom = targetZoom;
 		}
+		// TODO: IF m_gameState.m_unkUint1 OR m_gameState.m_unkBool7 MISSING, LOOK AROUND m_portalY AND m_gravityRelated!!!
 		m_gameState.m_unkUint1 = duration;
-		if (!this->m_unk2aa5 && m_gameState.m_unkBool7) updateDualGround(m_player1, static_cast<int>(m_player1->getActiveMode()), duration == 0.0f, duration);
+		if (!this->m_skipArtReload && m_gameState.m_unkBool7) updateDualGround(m_player1, static_cast<int>(m_player1->getActiveMode()), duration == 0.0f, duration);
 	}
 };
 
