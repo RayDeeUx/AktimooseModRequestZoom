@@ -54,5 +54,5 @@ class $modify(MySetupTriggerPopup, SetupTriggerPopup) {
 
 $on_mod(Loaded) {
 	ASSIGN_LOCAL_VARIABLES
-	listenForAllSettingChanges([](std::shared_ptr<SettingV3> _){ ASSIGN_LOCAL_VARIABLES });
+	listenForAllSettingChanges([](std::string_view, std::shared_ptr<SettingV3> ) { ASSIGN_LOCAL_VARIABLES });
 }
